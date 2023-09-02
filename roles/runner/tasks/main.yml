@@ -1,0 +1,14 @@
+- name: Transfer and execute a script.
+  #hosts: 
+  #remote_user: ec2-user
+  #sudo: yes
+  #tasks:
+  # - name: Transfer the script
+  copy: src=test.sh dest=/home/ec2-user mode=0755
+  # shell: test.sh >> somelog.txt
+  #args:
+  # chdir: /home/ec2-user/gitlab_ansible_docker/roles/runner/tasks
+
+- name: Execute the script
+  #command: sh /home/ec2-user/test.sh | tee /home/ec2-user/output.txt
+  command: sh /home/ec2-user/test.sh
